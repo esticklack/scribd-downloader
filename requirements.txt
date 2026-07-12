@@ -1,0 +1,4 @@
+selenium
+requests
+img2pdf
+PyMuPDF
