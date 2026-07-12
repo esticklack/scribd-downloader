@@ -29,14 +29,8 @@ python --version
 ### 1. Clonar o descargar el proyecto
 
 ```bash
-git clone https://github.com/TU_USUARIO/script-scribd.git
+git clone https://github.com/esticklack/script-scribd.git
 cd script-scribd
-```
-
-Si ya tienes la carpeta local, entra en ella:
-
-```powershell
-cd V:\Programacion\script-scribd
 ```
 
 ### 2. Crear un entorno virtual (recomendado)
@@ -80,10 +74,10 @@ Para usar el script desde cualquier terminal con un solo comando:
 
    Si el archivo no existe, créalo cuando PowerShell lo pregunte.
 
-2. Añade esta línea al final (ajusta la ruta a tu carpeta):
+2. Añade esta línea al final, apuntando a donde clonaste el repositorio:
 
    ```powershell
-   . "V:\Programacion\script-scribd\scribd.ps1"
+   . "C:\ruta\a\script-scribd\scribd.ps1"
    ```
 
 3. Guarda el archivo y recarga el perfil:
@@ -114,11 +108,7 @@ scribd "https://www.scribd.com/document/123456789/Titulo-del-documento"
 - El título detectado del documento
 - La ruta final del PDF
 
-**4.** El PDF quedará en tu carpeta de Descargas:
-
-```
-C:\Users\TU_USUARIO\Downloads\Titulo-del-documento.pdf
-```
+**4.** El PDF quedará en tu carpeta de Descargas (`~/Downloads`), con el título del documento como nombre de archivo.
 
 #### Opciones del comando `scribd`
 
@@ -155,14 +145,14 @@ Solo necesario para PDFs de texto generados por Chrome (no para documentos de im
 
 ```bash
 # Crea una copia con sufijo _sinmargen
-python recortar_margenes.py "C:\Users\TU_USUARIO\Downloads\documento.pdf"
+python recortar_margenes.py ~/Downloads/documento.pdf
 
 # Sobrescribe el PDF original
-python recortar_margenes.py "C:\Users\TU_USUARIO\Downloads\documento.pdf" --reemplazar
+python recortar_margenes.py ~/Downloads/documento.pdf --reemplazar
 
 # Opciones adicionales
-python recortar_margenes.py "documento.pdf" --margen 4 --salida "limpio.pdf"
-python recortar_margenes.py "documento.pdf" --uniforme --reemplazar
+python recortar_margenes.py documento.pdf --margen 4 --salida limpio.pdf
+python recortar_margenes.py documento.pdf --uniforme --reemplazar
 ```
 
 | Argumento | Descripción |
